@@ -1,8 +1,12 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_day1/game/fruit_catcher_game.dart';
+import 'package:fruit_day1/game/managers/audio_manager.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize audio
+  await AudioManager().initialize();
   runApp(const MyApp());
 }
 
@@ -27,6 +31,12 @@ class _GameScreenState extends State<GameScreen> {
   void initState() {
     super.initState();
     game = FruitCatcherGame();
+  }
+
+  @override
+  void dispose() {
+    game.onRemove();
+    super.dispose();
   }
 
   @override
@@ -71,11 +81,15 @@ class _GameScreenState extends State<GameScreen> {
                     children: [
                       IconButton(
                         icon: const Icon(Icons.music_note, color: Colors.black),
-                        onPressed: () {},
+                        onPressed: () {
+                          AudioManager().toggleMusic();
+                        },
                       ),
                       IconButton(
                         icon: const Icon(Icons.volume_up, color: Colors.black),
-                        onPressed: () {},
+                        onPressed: () {
+                          AudioManager().toggleSfx();
+                        },
                       ),
                     ],
                   ),
