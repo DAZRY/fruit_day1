@@ -5,16 +5,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Fruit Catcher Game', 
-      home: const GameScreen();
+      home: const GameScreen(),
     );  
   }
 }
 
 class GameScreen extends StatelessWidget {
+  const GameScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
