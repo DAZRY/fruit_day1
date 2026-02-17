@@ -36,10 +36,7 @@ class AudioManager {
   void playBackgroundMusic() {
     if (_isMusicEnabled) {
       try {
-        FlameAudio.bgm.play(
-          'music/background_music.mp3',
-          volume: _musicVolume,
-        );
+        FlameAudio.bgm.play('music/background_music.mp3', volume: _musicVolume);
       } catch (e) {
         print('Error playing background music: $e');
       }
@@ -90,13 +87,9 @@ class AudioManager {
   void playSfxWithVolume(String fileName, double volume) {
     if (_isSfxEnabled) {
       try {
-        final adjustedVolume =
-            (volume * _sfxVolume).clamp(0.0, 1.0);
+        final adjustedVolume = (volume * _sfxVolume).clamp(0.0, 1.0);
 
-        FlameAudio.play(
-          'sfx/$fileName',
-          volume: adjustedVolume,
-        );
+        FlameAudio.play('sfx/$fileName', volume: adjustedVolume);
       } catch (e) {
         print('Error playing SFX with volume: $e');
       }
