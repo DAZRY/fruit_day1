@@ -7,13 +7,20 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Fruit Catcher Game', home: const GameScreen());
+    return MaterialApp(
+      title: 'Fruit Catcher Game', 
+      home: const GameScreen();
+    );  
   }
 }
 
 class GameScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('Game akan ditampilkan di sini')));
+    return Scaffold(
+      body: Center(
+        child: Text('Game akan ditampilkan di sini'),
+      ),
+    );
   }
 }
