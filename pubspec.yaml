@@ -28,7 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  flame: ^1.16.0 # Game engine
+  flame: ^1.17.0 # Game engine
   flame_audio: ^2.1.6 # Audio player untuk Flame
 
   flutter:
